@@ -3,11 +3,7 @@ const sequelize = require("./sequelize.config");
 const RefreshToken = require("../modules/user/refreshToken.model");
 
 // RBAC models
-const {
-  Role,
-  Permission,
-  RolePermission,
-} = require("../modules/RBAC/rbac.model");
+const { Role, Permission, RolePermission } = require("../modules/RBAC/rbac.model");
 
 // User Model
 const User = sequelize.define(
@@ -41,16 +37,6 @@ const User = sequelize.define(
       validate: {
         notEmpty: { msg: "پسورد نمی‌تواند خالی باشد" },
         len: { args: [6, 100], msg: "پسورد باید حداقل 6 کاراکتر باشد" },
-      },
-    },
-    role: {
-      type: DataTypes.ENUM("student", "teacher", "admin"),
-      allowNull: false,
-      validate: {
-        isIn: {
-          args: [["student", "teacher", "admin"]],
-          msg: "نقش باید یکی از student، teacher یا admin باشد",
-        },
       },
     },
   },
@@ -170,12 +156,7 @@ const Session = sequelize.define(
       },
     },
     status: {
-      type: DataTypes.ENUM(
-        "scheduled",
-        "in_progress",
-        "completed",
-        "cancelled"
-      ),
+      type: DataTypes.ENUM("scheduled", "in_progress", "completed", "cancelled"),
       allowNull: false,
       defaultValue: "scheduled",
       validate: {
@@ -238,13 +219,7 @@ const Enrollment = sequelize.define(
       },
     },
     status: {
-      type: DataTypes.ENUM(
-        "pending",
-        "accepted",
-        "rejected",
-        "completed",
-        "cancelled"
-      ),
+      type: DataTypes.ENUM("pending", "accepted", "rejected", "completed", "cancelled"),
       allowNull: false,
       defaultValue: "pending",
       validate: {
@@ -391,12 +366,7 @@ const Attendance = sequelize.define(
       },
     },
     recordingMethod: {
-      type: DataTypes.ENUM(
-        "manual",
-        "automatic",
-        "qr_code",
-        "face_recognition"
-      ),
+      type: DataTypes.ENUM("manual", "automatic", "qr_code", "face_recognition"),
       allowNull: false,
       defaultValue: "manual",
       validate: {
@@ -449,13 +419,7 @@ const Payment = sequelize.define(
       },
     },
     status: {
-      type: DataTypes.ENUM(
-        "pending",
-        "paid",
-        "failed",
-        "refunded",
-        "cancelled"
-      ),
+      type: DataTypes.ENUM("pending", "paid", "failed", "refunded", "cancelled"),
       allowNull: false,
       defaultValue: "pending",
       validate: {
