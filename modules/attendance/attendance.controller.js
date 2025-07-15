@@ -6,7 +6,6 @@ const { User } = require("../user/user.model");
 const { Op } = require("sequelize");
 const createHttpError = require("http-errors");
 
-// All comments in this file should be in English. All user-facing messages (message fields and error messages) should be in Persian.
 // Get all attendance records
 const getAllAttendance = async (req, res, next) => {
   try {

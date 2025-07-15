@@ -7,7 +7,6 @@ const { Payment } = require("../payment/payment.model");
 const { Op } = require("sequelize");
 const createHttpError = require("http-errors");
 
-// All comments in this file should be in English. All user-facing messages (message fields and error messages) should be in Persian.
 // System overview report
 const getSystemOverview = async (req, res, next) => {
   try {
@@ -27,7 +26,13 @@ const getSystemOverview = async (req, res, next) => {
         "roleId",
         [sequelize.fn("COUNT", sequelize.col("id")), "count"],
       ],
-      include: [{ model: require("../RBAC/rbac.model").Role, as: "role", attributes: ["id", "title"] }],
+      include: [
+        {
+          model: require("../RBAC/rbac.model").Role,
+          as: "role",
+          attributes: ["id", "title"],
+        },
+      ],
       group: ["roleId", "role.id", "role.title"],
     });
 
@@ -586,7 +591,15 @@ const getTeacherPerformanceReport = async (req, res, next) => {
       throw createHttpError(400, "شناسه استاد الزامی است");
     }
 
-    const teacher = await User.findByPk(teacherId, { include: [{ model: require("../RBAC/rbac.model").Role, as: "role", attributes: ["id", "title"] }] });
+    const teacher = await User.findByPk(teacherId, {
+      include: [
+        {
+          model: require("../RBAC/rbac.model").Role,
+          as: "role",
+          attributes: ["id", "title"],
+        },
+      ],
+    });
     if (!teacher || teacher.role?.title !== "teacher") {
       throw createHttpError(404, "استاد یافت نشد");
     }

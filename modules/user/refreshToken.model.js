@@ -1,4 +1,3 @@
-"use strict";
 const { DataTypes } = require("sequelize");
 const sequelize = require("../../config/sequelize.config");
 
@@ -84,4 +83,4 @@ const RefreshToken = sequelize.define(
   }
 );
 
-module.exports = RefreshToken; 
+module.exports = RefreshToken;

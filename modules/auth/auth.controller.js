@@ -1,4 +1,3 @@
-// All comments in this file should be in English. All user-facing messages (message fields and error messages) should be in Persian.
 const authService = require("./auth.service");
 const createHttpError = require("http-errors");
 const { User } = require("../../config/models.initial");

@@ -1,5 +1,3 @@
-// RBAC: The roleId field is now used for user roles. The old role ENUM is removed. Use associations to Role model for all role-based logic.
-"use strict";
 const { DataTypes } = require("sequelize");
 const sequelize = require("../../config/sequelize.config");
 
@@ -39,7 +37,6 @@ const User = sequelize.define(
     roleId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      // Association is defined after model definition (see below)
     },
   },
   {
@@ -49,7 +46,5 @@ const User = sequelize.define(
     updatedAt: "updated_at",
   }
 );
-
-// Remove association code from here; now defined in config/models.initial.js
 
 module.exports = User;

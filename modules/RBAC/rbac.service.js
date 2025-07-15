@@ -1,4 +1,3 @@
-// All comments in this file should be in English. All user-facing messages (message fields and error messages) should be in Persian.
 const createHttpError = require("http-errors");
 const { Role, Permission, RolePermission } = require("./rbac.model");
 const { Op } = require("sequelize");
