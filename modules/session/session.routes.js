@@ -9,7 +9,7 @@ const { idValidation } = require("../../common/validation.middleware");
 router.get(
   "/",
   AuthGuard,
-  permitHandler("session:view"),
+  permitHandler("session view"),
   sessionController.getAllSessions
 );
 
@@ -17,7 +17,7 @@ router.get(
 router.get(
   "/:id",
   AuthGuard,
-  permitHandler("session:view"),
+  permitHandler("session view"),
   idValidation,
   sessionController.getSessionById
 );
@@ -26,7 +26,7 @@ router.get(
 router.post(
   "/",
   AuthGuard,
-  permitHandler("session:create"),
+  permitHandler("session create"),
   sessionController.createSession
 );
 
@@ -34,7 +34,7 @@ router.post(
 router.put(
   "/:id",
   AuthGuard,
-  permitHandler("session:update"),
+  permitHandler("session update"),
   idValidation,
   sessionController.updateSession
 );
@@ -43,7 +43,7 @@ router.put(
 router.delete(
   "/:id",
   AuthGuard,
-  permitHandler("session:delete"),
+  permitHandler("session delete"),
   idValidation,
   sessionController.deleteSession
 );
@@ -52,7 +52,7 @@ router.delete(
 router.get(
   "/course/:courseId",
   AuthGuard,
-  permitHandler("session:view"),
+  permitHandler("session view"),
   sessionController.getSessionsByCourse
 );
 
@@ -60,7 +60,7 @@ router.get(
 router.patch(
   "/:id/status",
   AuthGuard,
-  permitHandler("session:update"),
+  permitHandler("session update"),
   idValidation,
   sessionController.updateSessionStatus
 );
@@ -69,7 +69,7 @@ router.patch(
 router.get(
   "/stats",
   AuthGuard,
-  permitHandler("session:view"),
+  permitHandler("session view"),
   sessionController.getSessionStats
 );
 

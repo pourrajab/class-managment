@@ -9,7 +9,7 @@ const { idValidation } = require("../../common/validation.middleware");
 router.get(
   "/",
   AuthGuard,
-  permitHandler("payment:view"),
+  permitHandler("payment view"),
   paymentController.getAllPayments
 );
 
@@ -17,7 +17,7 @@ router.get(
 router.get(
   "/:id",
   AuthGuard,
-  permitHandler("payment:view"),
+  permitHandler("payment view"),
   idValidation,
   paymentController.getPaymentById
 );
@@ -26,7 +26,7 @@ router.get(
 router.post(
   "/",
   AuthGuard,
-  permitHandler("payment:create"),
+  permitHandler("payment create"),
   paymentController.createPayment
 );
 
@@ -34,7 +34,7 @@ router.post(
 router.put(
   "/:id",
   AuthGuard,
-  permitHandler("payment:update"),
+  permitHandler("payment update"),
   idValidation,
   paymentController.updatePayment
 );
@@ -43,7 +43,7 @@ router.put(
 router.delete(
   "/:id",
   AuthGuard,
-  permitHandler("payment:delete"),
+  permitHandler("payment delete"),
   idValidation,
   paymentController.deletePayment
 );
@@ -52,7 +52,7 @@ router.delete(
 router.get(
   "/my",
   AuthGuard,
-  permitHandler("payment:view"),
+  permitHandler("payment view"),
   paymentController.getMyPayments
 );
 
@@ -60,7 +60,7 @@ router.get(
 router.get(
   "/course/:courseId",
   AuthGuard,
-  permitHandler("payment:view"),
+  permitHandler("payment view"),
   paymentController.getPaymentsByCourse
 );
 
@@ -68,7 +68,7 @@ router.get(
 router.patch(
   "/:id/status",
   AuthGuard,
-  permitHandler("payment:update"),
+  permitHandler("payment update"),
   idValidation,
   paymentController.updatePaymentStatus
 );
@@ -77,7 +77,7 @@ router.patch(
 router.get(
   "/stats",
   AuthGuard,
-  permitHandler("payment:view"),
+  permitHandler("payment view"),
   paymentController.getPaymentStats
 );
 
@@ -85,7 +85,7 @@ router.get(
 router.get(
   "/report",
   AuthGuard,
-  permitHandler("payment:view"),
+  permitHandler("payment view"),
   paymentController.getPaymentReport
 );
 

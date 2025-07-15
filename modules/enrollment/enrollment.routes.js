@@ -9,7 +9,7 @@ const { idValidation } = require("../../common/validation.middleware");
 router.get(
   "/",
   AuthGuard,
-  permitHandler("enrollment:view"),
+  permitHandler("enrollment view"),
   enrollmentController.getAllEnrollments
 );
 
@@ -17,7 +17,7 @@ router.get(
 router.get(
   "/:id",
   AuthGuard,
-  permitHandler("enrollment:view"),
+  permitHandler("enrollment view"),
   idValidation,
   enrollmentController.getEnrollmentById
 );
@@ -26,7 +26,7 @@ router.get(
 router.post(
   "/",
   AuthGuard,
-  permitHandler("enrollment:create"),
+  permitHandler("enrollment create"),
   enrollmentController.createEnrollment
 );
 
@@ -34,7 +34,7 @@ router.post(
 router.put(
   "/:id",
   AuthGuard,
-  permitHandler("enrollment:update"),
+  permitHandler("enrollment update"),
   idValidation,
   enrollmentController.updateEnrollment
 );
@@ -43,7 +43,7 @@ router.put(
 router.delete(
   "/:id",
   AuthGuard,
-  permitHandler("enrollment:delete"),
+  permitHandler("enrollment delete"),
   idValidation,
   enrollmentController.deleteEnrollment
 );
@@ -52,7 +52,7 @@ router.delete(
 router.get(
   "/course/:courseId",
   AuthGuard,
-  permitHandler("enrollment:view"),
+  permitHandler("enrollment view"),
   enrollmentController.getEnrollmentsByCourse
 );
 
@@ -60,7 +60,7 @@ router.get(
 router.get(
   "/my",
   AuthGuard,
-  permitHandler("enrollment:view"),
+  permitHandler("enrollment view"),
   enrollmentController.getMyEnrollments
 );
 
@@ -68,7 +68,7 @@ router.get(
 router.patch(
   "/:id/status",
   AuthGuard,
-  permitHandler("enrollment:update"),
+  permitHandler("enrollment update"),
   idValidation,
   enrollmentController.updateEnrollmentStatus
 );
@@ -77,7 +77,7 @@ router.patch(
 router.get(
   "/stats",
   AuthGuard,
-  permitHandler("enrollment:view"),
+  permitHandler("enrollment view"),
   enrollmentController.getEnrollmentStats
 );
 

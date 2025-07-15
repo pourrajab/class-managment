@@ -11,24 +11,24 @@ const { AuthGuard } = require("../auth/auth.guard");
 const permitHandler = require("../RBAC/rbac.middleware");
 
 // Get all courses
-router.get("/", AuthGuard, permitHandler("course:view"), getCoursesHandler);
+router.get("/", AuthGuard, permitHandler("course view"), getCoursesHandler);
 
 // Get course by ID
 router.get(
   "/:id",
   AuthGuard,
-  permitHandler("course:view"),
+  permitHandler("course view"),
   getCourseByIdHandler
 );
 
 // Create a new course
-router.post("/", AuthGuard, permitHandler("course:create"), addCourseHandler);
+router.post("/", AuthGuard, permitHandler("course create"), addCourseHandler);
 
 // Update course
 router.put(
   "/:id",
   AuthGuard,
-  permitHandler("course:update"),
+  permitHandler("course update"),
   updateCourseHandler
 );
 
@@ -36,7 +36,7 @@ router.put(
 router.delete(
   "/:id",
   AuthGuard,
-  permitHandler("course:delete"),
+  permitHandler("course delete"),
   deleteCourseHandler
 );
 

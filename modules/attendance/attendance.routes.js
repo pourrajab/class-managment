@@ -9,7 +9,7 @@ const { idValidation } = require("../../common/validation.middleware");
 router.get(
   "/",
   AuthGuard,
-  permitHandler("attendance:view"),
+  permitHandler("attendance view"),
   attendanceController.getAllAttendance
 );
 
@@ -17,7 +17,7 @@ router.get(
 router.get(
   "/:id",
   AuthGuard,
-  permitHandler("attendance:view"),
+  permitHandler("attendance view"),
   idValidation,
   attendanceController.getAttendanceById
 );
@@ -26,7 +26,7 @@ router.get(
 router.post(
   "/",
   AuthGuard,
-  permitHandler("attendance:create"),
+  permitHandler("attendance create"),
   attendanceController.createAttendance
 );
 
@@ -34,7 +34,7 @@ router.post(
 router.put(
   "/:id",
   AuthGuard,
-  permitHandler("attendance:update"),
+  permitHandler("attendance update"),
   idValidation,
   attendanceController.updateAttendance
 );
@@ -43,7 +43,7 @@ router.put(
 router.delete(
   "/:id",
   AuthGuard,
-  permitHandler("attendance:delete"),
+  permitHandler("attendance delete"),
   idValidation,
   attendanceController.deleteAttendance
 );
@@ -52,7 +52,7 @@ router.delete(
 router.get(
   "/session/:sessionId",
   AuthGuard,
-  permitHandler("attendance:view"),
+  permitHandler("attendance view"),
   attendanceController.getAttendanceBySession
 );
 
@@ -60,7 +60,7 @@ router.get(
 router.get(
   "/my",
   AuthGuard,
-  permitHandler("attendance:view"),
+  permitHandler("attendance view"),
   attendanceController.getMyAttendance
 );
 
@@ -68,7 +68,7 @@ router.get(
 router.get(
   "/report",
   AuthGuard,
-  permitHandler("attendance:view"),
+  permitHandler("attendance view"),
   attendanceController.getAttendanceReport
 );
 
@@ -76,7 +76,7 @@ router.get(
 router.post(
   "/bulk",
   AuthGuard,
-  permitHandler("attendance:create"),
+  permitHandler("attendance create"),
   attendanceController.createBulkAttendance
 );
 

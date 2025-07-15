@@ -33,7 +33,7 @@ const User = sequelize.define(
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
+    allowNull: false,
       validate: {
         notEmpty: { msg: "پسورد نمی‌تواند خالی باشد" },
         len: { args: [6, 100], msg: "پسورد باید حداقل 6 کاراکتر باشد" },
@@ -218,10 +218,10 @@ const Enrollment = sequelize.define(
         min: { args: [1], msg: "شناسه دوره باید مثبت باشد" },
       },
     },
-    status: {
+  status: {
       type: DataTypes.ENUM("pending", "accepted", "rejected", "completed", "cancelled"),
-      allowNull: false,
-      defaultValue: "pending",
+    allowNull: false,
+    defaultValue: "pending",
       validate: {
         isIn: {
           args: [["pending", "accepted", "rejected", "completed", "cancelled"]],
@@ -418,10 +418,10 @@ const Payment = sequelize.define(
         min: { args: [0], msg: "مبلغ نمی‌تواند منفی باشد" },
       },
     },
-    status: {
+  status: {
       type: DataTypes.ENUM("pending", "paid", "failed", "refunded", "cancelled"),
-      allowNull: false,
-      defaultValue: "pending",
+    allowNull: false,
+    defaultValue: "pending",
       validate: {
         isIn: {
           args: [["pending", "paid", "failed", "refunded", "cancelled"]],
